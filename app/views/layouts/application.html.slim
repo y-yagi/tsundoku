@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    meta[name="viewport" content="width=device-width, initial-scale=1"]
+    title
+      | Tsundo-ku
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    link[rel="manifest" href="/manifest.json"]
+    link[rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"]
+    link[rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-red.min.css"]
+    script[defer src="https://code.getmdl.io/1.3.0/material.min.js"]
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tags
+
+  body
+    .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+      header.mdl-layout__header
+        .mdl-layout__header-row
+          span.mdl-layout-title
+            | Tsundo-ku
+          .mdl-layout-spacer
+      - if logged_in?
+        .mdl-layout__drawer
+          span.mdl-layout-title
+            | menu
+          nav.mdl-navigation
+            = link_to 'Home', books_url, class: 'mdl-navigation__link'
+      main.mdl-layout__content
+        .mdl-grid
+          .mdl-layout-spacer
+          .mdl-cell--8-col
+            = yield
+          .mdl-layout-spacer
+      div[aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar"]
+        .mdl-snackbar__text
+        button[type="button" class="mdl-snackbar__action"]

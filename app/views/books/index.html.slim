@@ -1,0 +1,19 @@
+h4.logo-font 積んでる本の一覧
+
+- if @books.present?
+  hr
+
+  .scroll-box
+    table.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp
+      thead
+        tr
+          th.mdl-data-table__cell--non-numeric = attributes_t('book.title')
+          th.mdl-data-table__cell--non-numeric = attributes_t('book.item_url')
+          th
+
+      tbody
+        - @books.each do |book|
+          tr
+            td = book.title
+            td = link_to book.item_url, book.item_url, target: '_blank'
+            td = link_to '削除', book, data: { confirm: '本当によろしいですか?' }, method: :delete
