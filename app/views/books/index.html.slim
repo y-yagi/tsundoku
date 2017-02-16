@@ -1,6 +1,9 @@
 h4.logo-font 積んでる本の一覧
 
-- if @books.present?
+- if @books.empty?
+  p
+    | 積んでる本はありません。やったね！
+- else @books.present?
   hr
 
   .scroll-box
