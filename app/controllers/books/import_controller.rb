@@ -6,7 +6,7 @@ class Books::ImportController < ApplicationController
       head :not_found
     else
       BookImporter.import(url: params[:url], user: current_user)
-      head :success
+      head :ok
     end
   end
 end
