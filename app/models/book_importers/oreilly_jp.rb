@@ -8,7 +8,10 @@ module BookImporters
         title = page.search(".title").text
         raise "Unexpected Page: #{url}" unless title
 
-        Book.create!(title: title, item_url: url, provider: provider, user: user)
+        Book.find_or_create_by!(title: title, user: user) do |book|
+          book.item_url = url
+          book.provider = provider
+        end
       end
     end
   end
