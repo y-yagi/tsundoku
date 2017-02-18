@@ -10,7 +10,7 @@ end
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'rails', '~> 5.0.1'
-gem 'rack-cors', require: 'rack/cors'
+gem 'rack-cors'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
