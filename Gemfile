@@ -33,3 +33,10 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+group :test do
+  gem 'poltergeist'
+  gem 'minitest-sub_test_case'
+  gem 'vcr'
+  gem 'webmock'
+end
