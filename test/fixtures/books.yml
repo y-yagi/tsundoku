@@ -1,11 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+deep_learning:
+  title: "ゼロから作るDeep Learning――Pythonで学ぶディープラーニングの理論と実装"
+  item_url: "http://www.oreilly.co.jp/books/9784873117584/"
+  provider: "OreillyJp"
+  user: google
