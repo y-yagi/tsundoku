@@ -9,12 +9,10 @@ class BooksController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @book.update(book_params)
-        redirect_to @book, notice: 'Book was successfully updated.'
-      else
-        render :edit
-      end
+    if @book.update(book_params)
+      redirect_to @book, notice: 'Book was successfully updated.'
+    else
+      render :edit
     end
   end
 
