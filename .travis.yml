@@ -1,0 +1,17 @@
+language: ruby
+sudo: false
+rvm:
+  - 2.4.0
+env:
+  - DB=postgresql
+bundler_args: "--without production"
+cache: bundler
+script:
+  - RAILS_ENV=test bin/rails db:migrate
+  - xvfb-run bin/rails test
+before_script:
+  - export TZ=Asia/Tokyo
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database database_test' -U postgres
+  - bundle update
+cache: bundler

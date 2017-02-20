@@ -6,11 +6,12 @@ class User < ApplicationRecord
       find_by(provider: auth['provider'], uid: auth['uid']) || create_with_omniauth!(auth)
     end
 
-    def create_with_omniauth!(auth)
-      create! do |u|
-        u.provider = auth['provider']
-        u.uid = auth['uid']
+    private
+      def create_with_omniauth!(auth)
+        create! do |u|
+          u.provider = auth['provider']
+          u.uid = auth['uid']
+        end
       end
-    end
   end
 end
