@@ -35,6 +35,7 @@ group :development do
 end
 
 group :test do
+  gem 'capybara'
   gem 'poltergeist'
   gem 'minitest-sub_test_case'
   gem 'vcr'
