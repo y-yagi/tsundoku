@@ -9,7 +9,7 @@ end
 
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.1.0.beta1'
 gem 'rack-cors'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
