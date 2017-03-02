@@ -9,6 +9,12 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 end
 
+OmniAuth.config.test_mode = true
+OmniAuth.config.add_mock(:google_oauth2,
+  'uid' => '1',
+  'provider' => 'google_oauth2',
+)
+
 VCR.configure do |config|
   config.cassette_library_dir = 'test/vcr_cassettes'
   config.hook_into :webmock
