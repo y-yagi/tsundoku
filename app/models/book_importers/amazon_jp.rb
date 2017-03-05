@@ -2,7 +2,7 @@ module BookImporters
   class AmazonJp < Base
     class << self
       def import(url:, user:)
-        asin = url.scan(/gp\/product\/(.*)\/|dp\/(.*)\//).flatten.compact.first
+        asin = get_asin_from_url(url)
         raise "Unexpected Page: #{url}" unless asin
 
         title = fetch_title(asin)
@@ -12,6 +12,10 @@ module BookImporters
           book.item_url = url
           book.provider = provider
         end
+      end
+
+      def get_asin_from_url(url)
+        url.scan(/gp\/product\/(.*)\/|dp\/(.*)\//).flatten.compact.first
       end
 
       def fetch_title(asin)
