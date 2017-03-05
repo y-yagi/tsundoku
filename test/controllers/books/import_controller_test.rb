@@ -18,6 +18,21 @@ class Books::ImportControllerTest < ActionController::TestCase
     assert_equal 'OreillyJp', book.provider
   end
 
+  test 'import from Amazon JP' do
+    assert_difference('Book.count') do
+      VCR.use_cassette('OreillyJpController') do
+        post :create, params: { url: "https://www.amazon.co.jp/gp/product/B01N4AT0ZD/"}
+      end
+    end
+    assert_response :success
+
+    book = Book.last
+    assert_equal book.user, users(:google)
+    assert_equal '大事なことに集中する', book.title
+    assert_equal 'https://www.amazon.co.jp/gp/product/B01N4AT0ZD/', book.item_url
+    assert_equal 'AmazonJp', book.provider
+  end
+
   test 'import from unsupported url' do
     e = assert_raises(ArgumentError) do
       post :create, params: { url: "https://translate.google.com"}
