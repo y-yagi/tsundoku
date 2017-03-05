@@ -18,5 +18,5 @@ h4.logo-font 積んでる本の一覧
         - @books.each do |book|
           tr
             td = book.title
-            td = link_to book.item_url, book.item_url, target: '_blank'
+            td = link_to book.item_url.truncate(50), book.item_url, target: '_blank'
             td = link_to '削除', book, data: { confirm: '本当によろしいですか?' }, method: :delete

@@ -13,6 +13,8 @@ class BookImporter
   def import
     if @url.match?("oreilly.co.jp")
       BookImporters::OreillyJp.import(url: @url, user: @user)
+    elsif @url.start_with?("https://www.amazon.co.jp")
+      BookImporters::AmazonJp.import(url: @url, user: @user)
     else
       raise ArgumentError, "Unsupported Domain: #{@url}"
     end

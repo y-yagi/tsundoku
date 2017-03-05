@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://webservices.amazon.co.jp/onca/xml?AWSAccessKeyId=AKIAIDDSMOD567S3DPJA&AssociateTag=yyagi001-22&ItemId=B01MU055XH&Operation=ItemLookup&Service=AWSECommerceService&Signature=a3osxHGcTw1FzjgMUcYiJfPIvBiYHJvt/CsHaMGnI8k=&Timestamp=2017-03-05T01:40:36Z&Version=2013-08-01
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - webservices.amazon.co.jp
+  response:
+    status:
+      code: 503
+      message: Service Unavailable
+    headers:
+      Date:
+      - Sun, 05 Mar 2017 01:40:35 GMT
+      Server:
+      - Apache-Coyote/1.1
+      Vary:
+      - Accept-Encoding,User-Agent
+      Content-Length:
+      - '285'
+      Cneonction:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        <?xml version="1.0"?>
+        <ItemLookupErrorResponse xmlns="http://ecs.amazonaws.com/doc/2013-08-01/"><Error><Code>RequestThrottled</Code><Message>AWS Access Key ID: AKIAIDDSMOD567S3DPJA. You are submitting requests too quickly. Please retry your requests at a slower rate.</Message></Error><RequestId>8ce5ab2b-afd2-4640-b7db-27b5f836cb51</RequestId></ItemLookupErrorResponse>
+    http_version: 
+  recorded_at: Sun, 05 Mar 2017 01:40:36 GMT
+- request:
+    method: get
+    uri: http://webservices.amazon.co.jp/onca/xml?AWSAccessKeyId=AKIAIDDSMOD567S3DPJA&AssociateTag=yyagi001-22&ItemId=B01MU055XH&Operation=ItemLookup&Service=AWSECommerceService&Signature=uCi5NVyt6gQJZ7I7nzBZe3XaPb06YMnl1FtXNnqxDaU=&Timestamp=2017-03-05T01:40:37Z&Version=2013-08-01
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - webservices.amazon.co.jp
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 05 Mar 2017 01:40:38 GMT
+      Server:
+      - Apache-Coyote/1.1
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding,User-Agent
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxJdGVtTG9va3VwUmVzcG9uc2UgeG1sbnM9Imh0dHA6Ly93ZWJzZXJ2aWNlcy5hbWF6b24uY29tL0FXU0VDb21tZXJjZVNlcnZpY2UvMjAxMy0wOC0wMSI+PE9wZXJhdGlvblJlcXVlc3Q+PEhUVFBIZWFkZXJzPjxIZWFkZXIgTmFtZT0iVXNlckFnZW50IiBWYWx1ZT0iUnVieSI+PC9IZWFkZXI+PC9IVFRQSGVhZGVycz48UmVxdWVzdElkPmFlYzM0YTE0LTgxNmMtNDRiNy1hZTJkLWExMjU3NTk1MmU4OTwvUmVxdWVzdElkPjxBcmd1bWVudHM+PEFyZ3VtZW50IE5hbWU9IkFXU0FjY2Vzc0tleUlkIiBWYWx1ZT0iQUtJQUlERFNNT0Q1NjdTM0RQSkEiPjwvQXJndW1lbnQ+PEFyZ3VtZW50IE5hbWU9IkFzc29jaWF0ZVRhZyIgVmFsdWU9Inl5YWdpMDAxLTIyIj48L0FyZ3VtZW50PjxBcmd1bWVudCBOYW1lPSJJdGVtSWQiIFZhbHVlPSJCMDFNVTA1NVhIIj48L0FyZ3VtZW50PjxBcmd1bWVudCBOYW1lPSJPcGVyYXRpb24iIFZhbHVlPSJJdGVtTG9va3VwIj48L0FyZ3VtZW50PjxBcmd1bWVudCBOYW1lPSJTZXJ2aWNlIiBWYWx1ZT0iQVdTRUNvbW1lcmNlU2VydmljZSI+PC9Bcmd1bWVudD48QXJndW1lbnQgTmFtZT0iVGltZXN0YW1wIiBWYWx1ZT0iMjAxNy0wMy0wNVQwMTo0MDozN1oiPjwvQXJndW1lbnQ+PEFyZ3VtZW50IE5hbWU9IlZlcnNpb24iIFZhbHVlPSIyMDEzLTA4LTAxIj48L0FyZ3VtZW50PjxBcmd1bWVudCBOYW1lPSJTaWduYXR1cmUiIFZhbHVlPSJ1Q2k1TlZ5dDZnUUpaN0k3bnpCWmUzWGFQYjA2WU1ubDFGdFhObnF4RGFVPSI+PC9Bcmd1bWVudD48L0FyZ3VtZW50cz48UmVxdWVzdFByb2Nlc3NpbmdUaW1lPjAuMDAzOTg4MDU2MDAwMDAwMDwvUmVxdWVzdFByb2Nlc3NpbmdUaW1lPjwvT3BlcmF0aW9uUmVxdWVzdD48SXRlbXM+PFJlcXVlc3Q+PElzVmFsaWQ+VHJ1ZTwvSXNWYWxpZD48SXRlbUxvb2t1cFJlcXVlc3Q+PElkVHlwZT5BU0lOPC9JZFR5cGU+PEl0ZW1JZD5CMDFNVTA1NVhIPC9JdGVtSWQ+PFJlc3BvbnNlR3JvdXA+U21hbGw8L1Jlc3BvbnNlR3JvdXA+PFZhcmlhdGlvblBhZ2U+QWxsPC9WYXJpYXRpb25QYWdlPjwvSXRlbUxvb2t1cFJlcXVlc3Q+PC9SZXF1ZXN0PjxJdGVtPjxBU0lOPkIwMU1VMDU1WEg8L0FTSU4+PERldGFpbFBhZ2VVUkw+aHR0cHM6Ly93d3cuYW1hem9uLmNvLmpwL0hJR0gtT1VUUFVULU1BTkFHRU1FTlQtJUUzJTgyJUEyJUUzJTgzJUIzJUUzJTgzJTg5JUUzJTgzJUFBJUUzJTgzJUE1JUUzJTgzJUJDJUUzJTgzJUJCUyVFMyU4MyVCQiVFMyU4MiVCMCVFMyU4MyVBRCVFMyU4MyVCQyVFMyU4MyU5Ni1lYm9vay9kcC9CMDFNVTA1NVhIJTNGU3Vic2NyaXB0aW9uSWQlM0RBS0lBSUREU01PRDU2N1MzRFBKQSUyNnRhZyUzRHl5YWdpMDAxLTIyJTI2bGlua0NvZGUlM0R4bTIlMjZjYW1wJTNEMjAyNSUyNmNyZWF0aXZlJTNEMTY1OTUzJTI2Y3JlYXRpdmVBU0lOJTNEQjAxTVUwNTVYSDwvRGV0YWlsUGFnZVVSTD48SXRlbUxpbmtzPjxJdGVtTGluaz48RGVzY3JpcHRpb24+QWRkIFRvIFdpc2hsaXN0PC9EZXNjcmlwdGlvbj48VVJMPmh0dHBzOi8vd3d3LmFtYXpvbi5jby5qcC9ncC9yZWdpc3RyeS93aXNobGlzdC9hZGQtaXRlbS5odG1sJTNGYXNpbi4wJTNEQjAxTVUwNTVYSCUyNlN1YnNjcmlwdGlvbklkJTNEQUtJQUlERFNNT0Q1NjdTM0RQSkElMjZ0YWclM0R5eWFnaTAwMS0yMiUyNmxpbmtDb2RlJTNEeG0yJTI2Y2FtcCUzRDIwMjUlMjZjcmVhdGl2ZSUzRDUxNDMlMjZjcmVhdGl2ZUFTSU4lM0RCMDFNVTA1NVhIPC9VUkw+PC9JdGVtTGluaz48SXRlbUxpbms+PERlc2NyaXB0aW9uPlRlbGwgQSBGcmllbmQ8L0Rlc2NyaXB0aW9uPjxVUkw+aHR0cHM6Ly93d3cuYW1hem9uLmNvLmpwL2dwL3BkcC90YWYvQjAxTVUwNTVYSCUzRlN1YnNjcmlwdGlvbklkJTNEQUtJQUlERFNNT0Q1NjdTM0RQSkElMjZ0YWclM0R5eWFnaTAwMS0yMiUyNmxpbmtDb2RlJTNEeG0yJTI2Y2FtcCUzRDIwMjUlMjZjcmVhdGl2ZSUzRDUxNDMlMjZjcmVhdGl2ZUFTSU4lM0RCMDFNVTA1NVhIPC9VUkw+PC9JdGVtTGluaz48SXRlbUxpbms+PERlc2NyaXB0aW9uPkFsbCBDdXN0b21lciBSZXZpZXdzPC9EZXNjcmlwdGlvbj48VVJMPmh0dHBzOi8vd3d3LmFtYXpvbi5jby5qcC9yZXZpZXcvcHJvZHVjdC9CMDFNVTA1NVhIJTNGU3Vic2NyaXB0aW9uSWQlM0RBS0lBSUREU01PRDU2N1MzRFBKQSUyNnRhZyUzRHl5YWdpMDAxLTIyJTI2bGlua0NvZGUlM0R4bTIlMjZjYW1wJTNEMjAyNSUyNmNyZWF0aXZlJTNENTE0MyUyNmNyZWF0aXZlQVNJTiUzREIwMU1VMDU1WEg8L1VSTD48L0l0ZW1MaW5rPjxJdGVtTGluaz48RGVzY3JpcHRpb24+QWxsIE9mZmVyczwvRGVzY3JpcHRpb24+PFVSTD5odHRwczovL3d3dy5hbWF6b24uY28uanAvZ3Avb2ZmZXItbGlzdGluZy9CMDFNVTA1NVhIJTNGU3Vic2NyaXB0aW9uSWQlM0RBS0lBSUREU01PRDU2N1MzRFBKQSUyNnRhZyUzRHl5YWdpMDAxLTIyJTI2bGlua0NvZGUlM0R4bTIlMjZjYW1wJTNEMjAyNSUyNmNyZWF0aXZlJTNENTE0MyUyNmNyZWF0aXZlQVNJTiUzREIwMU1VMDU1WEg8L1VSTD48L0l0ZW1MaW5rPjwvSXRlbUxpbmtzPjxJdGVtQXR0cmlidXRlcz48QXV0aG9yPuOCouODs+ODieODquODpeODvOODu1Pjg7vjgrDjg63jg7zjg5Y8L0F1dGhvcj48Q3JlYXRvciBSb2xlPSLnv7voqLMiPuWwj+ael+OAgOiWqzwvQ3JlYXRvcj48TWFudWZhY3R1cmVyPuaXpee1jEJQ56S+PC9NYW51ZmFjdHVyZXI+PFByb2R1Y3RHcm91cD5lQm9va3M8L1Byb2R1Y3RHcm91cD48VGl0bGU+SElHSCBPVVRQVVQgTUFOQUdFTUVOVDwvVGl0bGU+PC9JdGVtQXR0cmlidXRlcz48L0l0ZW0+PC9JdGVtcz48L0l0ZW1Mb29rdXBSZXNwb25zZT4=
+    http_version: 
+  recorded_at: Sun, 05 Mar 2017 01:40:39 GMT
+recorded_with: VCR 3.0.3

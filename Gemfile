@@ -7,12 +7,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'amazon-ecs'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'rails', '~> 5.1.0.beta1'
 gem 'rack-cors'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
+gem 'retryable'
 gem 'sass-rails', '~> 5.0'
 gem 'slim-rails', github: 'y-yagi/slim-rails', branch: 'make_work_with_sprockets_4'
 gem 'sprockets', '~> 4.x'
