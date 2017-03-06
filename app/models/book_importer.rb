@@ -11,7 +11,7 @@ class BookImporter
   end
 
   def import
-    if @url.match?("oreilly.co.jp")
+    if @url.match?(%r|\Ahttps?://www\.oreilly\.co\.jp/|)
       BookImporters::OreillyJp.import(url: @url, user: @user)
     elsif @url.start_with?("https://www.amazon.co.jp")
       BookImporters::AmazonJp.import(url: @url, user: @user)
