@@ -33,6 +33,21 @@ class Books::ImportControllerTest < ActionController::TestCase
     assert_equal 'AmazonJp', book.provider
   end
 
+  test 'import from pragprog' do
+    assert_difference('Book.count') do
+      VCR.use_cassette('PragprogController') do
+        post :create, params: { url: "https://pragprog.com/book/fugue/scalable-cloud-ops-with-fugue"}
+      end
+    end
+    assert_response :success
+
+    book = Book.last
+    assert_equal book.user, users(:google)
+    assert_equal 'Scalable Cloud Ops with Fugue: Declare, Deploy, and Automate the Cloud', book.title
+    assert_equal 'https://pragprog.com/book/fugue/scalable-cloud-ops-with-fugue', book.item_url
+    assert_equal 'Pragprog', book.provider
+  end
+
   test 'import from unsupported url' do
     e = assert_raises(ArgumentError) do
       post :create, params: { url: "https://translate.google.com"}
