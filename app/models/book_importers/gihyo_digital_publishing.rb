@@ -1,8 +1,8 @@
 module BookImporters
-  class Pragprog < Base
+  class GihyoDigitalPublishing < Base
     class << self
       def get_title(page)
-        page.search("h1").first.text
+        page.search("h1#bookTitle").text
       end
     end
   end

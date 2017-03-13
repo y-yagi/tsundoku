@@ -48,6 +48,21 @@ class Books::ImportControllerTest < ActionController::TestCase
     assert_equal 'Pragprog', book.provider
   end
 
+  test 'import from Gihyo Digital Publishing' do
+    assert_difference('Book.count') do
+      VCR.use_cassette('GihyoDigitalPublishingController') do
+        post :create, params: { url: "https://gihyo.jp/dp/ebook/2016/978-4-7741-8634-4"}
+      end
+    end
+    assert_response :success
+
+    book = Book.last
+    assert_equal book.user, users(:google)
+    assert_equal '人工知能の作り方―「おもしろい」ゲームAIはいかにして動くのか', book.title
+    assert_equal 'https://gihyo.jp/dp/ebook/2016/978-4-7741-8634-4', book.item_url
+    assert_equal 'GihyoDigitalPublishing', book.provider
+  end
+
   test 'import from unsupported url' do
     e = assert_raises(ArgumentError) do
       post :create, params: { url: "https://translate.google.com"}
