@@ -1,1 +1,1 @@
-web: bin/rails server -p 31079 -e production -b 0.0.0.2
+web: bin/rails server -e production -b 0.0.0.0
