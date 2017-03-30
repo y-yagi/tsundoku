@@ -20,7 +20,6 @@ gem 'slim-rails', github: 'y-yagi/slim-rails', branch: 'make_work_with_sprockets
 gem 'sprockets', '~> 4.x'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
-gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'mechanize'
 
