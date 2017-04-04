@@ -21,6 +21,8 @@ class BookImporter
       BookImporters::GihyoDigitalPublishing.import(url: @url, user: @user)
     elsif @url.start_with?("https://www.packtpub.com")
       BookImporters::Packt.import(url: @url, user: @user)
+    elsif @url.start_with?("https://www.lambdanote.com")
+      BookImporters::LambdaNote.import(url: @url, user: @user)
     else
       raise ArgumentError, "Unsupported Domain: #{@url}"
     end

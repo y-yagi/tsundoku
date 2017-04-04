@@ -78,6 +78,21 @@ class Books::ImportControllerTest < ActionController::TestCase
     assert_equal 'Packt', book.provider
   end
 
+  test 'import from LambdaNote' do
+    assert_difference('Book.count') do
+      VCR.use_cassette('LambdaNoteController') do
+        post :create, params: { url: "https://www.lambdanote.com/collections/frontpage/products/ruby-ruby"}
+      end
+    end
+    assert_response :success
+
+    book = Book.last
+    assert_equal book.user, users(:google)
+    assert_equal 'RubyでつくるRuby ゼロから学びなおすプログラミング言語入門（紙書籍）', book.title
+    assert_equal 'https://www.lambdanote.com/collections/frontpage/products/ruby-ruby', book.item_url
+    assert_equal 'LambdaNote', book.provider
+  end
+
   test 'import from unsupported url' do
     e = assert_raises(ArgumentError) do
       post :create, params: { url: "https://translate.google.com"}
