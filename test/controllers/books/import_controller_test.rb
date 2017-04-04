@@ -63,6 +63,21 @@ class Books::ImportControllerTest < ActionController::TestCase
     assert_equal 'GihyoDigitalPublishing', book.provider
   end
 
+  test 'import from Packt' do
+    assert_difference('Book.count') do
+      VCR.use_cassette('PacktController') do
+        post :create, params: { url: "https://www.packtpub.com/big-data-and-business-intelligence/postgresql-high-performance-cookbook"}
+      end
+    end
+    assert_response :success
+
+    book = Book.last
+    assert_equal book.user, users(:google)
+    assert_equal 'PostgreSQL High Performance Cookbook', book.title
+    assert_equal 'https://www.packtpub.com/big-data-and-business-intelligence/postgresql-high-performance-cookbook', book.item_url
+    assert_equal 'Packt', book.provider
+  end
+
   test 'import from unsupported url' do
     e = assert_raises(ArgumentError) do
       post :create, params: { url: "https://translate.google.com"}
