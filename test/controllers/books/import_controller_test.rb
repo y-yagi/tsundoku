@@ -93,6 +93,21 @@ class Books::ImportControllerTest < ActionController::TestCase
     assert_equal 'LambdaNote', book.provider
   end
 
+  test 'import from Booth' do
+    assert_difference('Book.count') do
+      VCR.use_cassette('BoothController') do
+        post :create, params: { url: "https://tk-rabbit-house.booth.pm/items/489874" }
+      end
+    end
+    assert_response :success
+
+    book = Book.last
+    assert_equal book.user, users(:google)
+    assert_equal 'Modern JavaScript', book.title
+    assert_equal 'https://tk-rabbit-house.booth.pm/items/489874', book.item_url
+    assert_equal 'Booth', book.provider
+  end
+
   test 'import from unsupported url' do
     e = assert_raises(ArgumentError) do
       post :create, params: { url: "https://translate.google.com"}
