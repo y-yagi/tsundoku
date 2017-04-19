@@ -108,6 +108,21 @@ class Books::ImportControllerTest < ActionController::TestCase
     assert_equal 'Booth', book.provider
   end
 
+  test 'import from Ohmsha' do
+    assert_difference('Book.count') do
+      VCR.use_cassette('OhmshaController') do
+        post :create, params: { url: "https://estore.ohmsha.co.jp/titles/978427421483P" }
+      end
+    end
+    assert_response :success
+
+    book = Book.last
+    assert_equal book.user, users(:google)
+    assert_equal 'ユーザビリティエンジニアリング 第2版 ユーザエクスペリエンスのための調査、設計、評価手法', book.title
+    assert_equal 'https://estore.ohmsha.co.jp/titles/978427421483P', book.item_url
+    assert_equal 'Ohmsha', book.provider
+  end
+
   test 'import from unsupported url' do
     e = assert_raises(ArgumentError) do
       post :create, params: { url: "https://translate.google.com"}
