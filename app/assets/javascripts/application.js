@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+// TODO: Temporary solution of https://github.com/rails/rails/pull/28837
+//= require monkey-rails-ujs
 //= require turbolinks
 //= require_tree .
