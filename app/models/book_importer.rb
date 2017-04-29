@@ -23,7 +23,7 @@ class BookImporter
       BookImporters::Packt.import(url: @url, user: @user)
     elsif @url.start_with?("https://www.lambdanote.com")
       BookImporters::LambdaNote.import(url: @url, user: @user)
-    elsif @url.match?(%r|\Ahttps.*?\.booth\.pm/|)
+    elsif @url.match?(%r|\Ahttps.*?\.?booth\.pm/|)
       BookImporters::Booth.import(url: @url, user: @user)
     elsif @url.start_with?("https://estore.ohmsha.co.jp")
       BookImporters::Ohmsha.import(url: @url, user: @user)
