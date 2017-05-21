@@ -63,6 +63,21 @@ class Books::ImportControllerTest < ActionController::TestCase
     assert_equal 'GihyoDigitalPublishing', book.provider
   end
 
+  test 'import from Gihyo Jp' do
+    assert_difference('Book.count') do
+      VCR.use_cassette('GihyoJpController') do
+        post :create, params: { url: "http://gihyo.jp/book/2017/978-4-7741-8977-2"}
+      end
+    end
+    assert_response :success
+
+    book = Book.last
+    assert_equal book.user, users(:google)
+    assert_equal 'パーフェクトシリーズ改訂2版 パーフェクトRuby', book.title
+    assert_equal 'http://gihyo.jp/book/2017/978-4-7741-8977-2', book.item_url
+    assert_equal 'GihyoJp', book.provider
+  end
+
   test 'import from Packt' do
     assert_difference('Book.count') do
       VCR.use_cassette('PacktController') do

@@ -19,6 +19,8 @@ class BookImporter
       BookImporters::Pragprog.import(url: @url, user: @user)
     elsif @url.start_with?("https://gihyo.jp/dp")
       BookImporters::GihyoDigitalPublishing.import(url: @url, user: @user)
+    elsif @url.start_with?("http://gihyo.jp/book")
+      BookImporters::GihyoJp.import(url: @url, user: @user)
     elsif @url.start_with?("https://www.packtpub.com")
       BookImporters::Packt.import(url: @url, user: @user)
     elsif @url.start_with?("https://www.lambdanote.com")
