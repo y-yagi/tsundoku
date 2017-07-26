@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.0'
+ruby '2.4.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -17,7 +17,7 @@ gem 'puma', '~> 3.0'
 gem 'retryable'
 gem 'rollbar'
 gem 'sass-rails', '~> 5.0'
-gem 'slim-rails', github: 'y-yagi/slim-rails', branch: 'make_work_with_sprockets_4'
+gem 'slim-rails'
 gem 'sprockets', '~> 4.x'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
