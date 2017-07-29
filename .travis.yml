@@ -22,3 +22,4 @@ before_script:
 script:
   - RAILS_ENV=test bin/rails db:migrate
   - bin/rails test
+  - bin/rails test:system
