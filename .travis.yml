@@ -1,17 +1,24 @@
 language: ruby
-sudo: false
+sudo: required
+dist: trusty
 rvm:
   - 2.4.1
 env:
   - DB=postgresql
 bundler_args: "--without production"
 cache: bundler
-script:
-  - RAILS_ENV=test bin/rails db:migrate
-  - xvfb-run bin/rails test
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y libappindicator1 fonts-liberation
+
+  - export CHROME_BIN=/usr/bin/google-chrome
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome*.deb
 before_script:
   - export TZ=Asia/Tokyo
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database database_test' -U postgres
   - bundle update
-cache: bundler
+script:
+  - RAILS_ENV=test bin/rails db:migrate
+  - bin/rails test
