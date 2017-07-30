@@ -3,7 +3,7 @@ require "capybara/poltergeist"
 
 Capybara.register_driver(:headless_chrome) do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    chromeOptions: { args: %w[headless] }
+    chromeOptions: { args: %w[headless window-size=1920x1080] }
   )
 
   Capybara::Selenium::Driver.new(
@@ -14,7 +14,7 @@ Capybara.register_driver(:headless_chrome) do |app|
 end
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-  driven_by :headless_chrome, screen_size: [1400, 1400]
+  driven_by :headless_chrome
 
   def login
     visit '/auth/google_oauth2'
