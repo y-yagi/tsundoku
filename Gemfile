@@ -10,7 +10,7 @@ end
 gem 'amazon-ecs'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-gem 'rails', '~> 5.1.3'
+gem 'rails', '~> 5.1.4.rc1'
 gem 'rack-cors'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
