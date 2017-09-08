@@ -19,3 +19,5 @@
 
 # Ignore encrypted secrets key file.
 config/secrets.yml.key
+
+public/assets/
