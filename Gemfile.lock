@@ -113,7 +113,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_mime (0.1.4)
-    mini_portile2 (2.2.0)
+    mini_portile2 (2.3.0)
     minitest (5.10.3)
     minitest-sub_test_case (0.1.0)
     multi_json (1.12.2)
@@ -122,8 +122,8 @@ GEM
     net-http-digest_auth (1.4.1)
     net-http-persistent (2.9.4)
     nio4r (2.1.0)
-    nokogiri (1.8.0)
-      mini_portile2 (~> 2.2.0)
+    nokogiri (1.8.1)
+      mini_portile2 (~> 2.3.0)
     ntlm-http (0.1.1)
     oauth2 (1.4.0)
       faraday (>= 0.8, < 0.13)
@@ -263,6 +263,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mechanize
   minitest-sub_test_case
+  nokogiri (>= 1.8.1)
   omniauth
   omniauth-google-oauth2
   pg (~> 0.18)
@@ -284,9 +285,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webmock
 
-
 RUBY VERSION
    ruby 2.4.1p111
-
 BUNDLED WITH
    1.15.4
