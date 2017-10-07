@@ -40,7 +40,6 @@ group :test do
   gem 'capybara'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
-  gem 'poltergeist'
   gem 'minitest-sub_test_case'
   gem 'vcr'
   gem 'webmock'

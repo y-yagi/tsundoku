@@ -1,5 +1,4 @@
 require "test_helper"
-require "capybara/poltergeist"
 
 Capybara.register_driver(:headless_chrome) do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
