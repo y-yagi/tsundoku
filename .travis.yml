@@ -7,13 +7,8 @@ env:
   - DB=postgresql
 bundler_args: "--without production"
 cache: bundler
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install -y libappindicator1 fonts-liberation
-
-  - export CHROME_BIN=/usr/bin/google-chrome
-  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  - sudo dpkg -i google-chrome*.deb
+addons:
+  chrome: stable
 before_script:
   - export TZ=Asia/Tokyo
   - cp config/database.yml.travis config/database.yml
