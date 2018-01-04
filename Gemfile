@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 ruby '2.4.1'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
+  repo_name = '#{repo_name}/#{repo_name}' unless repo_name.include?('/')
+  'https://github.com/#{repo_name}.git'
 end
 
 gem 'amazon-ecs'
@@ -37,6 +37,7 @@ group :development do
 end
 
 group :test do
+  gem 'minitest', '~> 5.10.0'
   gem 'capybara'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
