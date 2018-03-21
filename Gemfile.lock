@@ -130,7 +130,7 @@ GEM
     multipart-post (2.0.0)
     net-http-digest_auth (1.4.1)
     net-http-persistent (2.9.4)
-    nio4r (2.2.0)
+    nio4r (2.3.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     ntlm-http (0.1.1)
@@ -291,7 +291,9 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webmock
 
+
 RUBY VERSION
    ruby 2.5.0p0
+
 BUNDLED WITH
    1.16.1
