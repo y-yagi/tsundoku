@@ -46,3 +46,4 @@ group :test do
   gem 'webmock'
 end
 gem 'nokogiri', '>= 1.8.1'
+gem 'loofah', '>= 2.2.1'
