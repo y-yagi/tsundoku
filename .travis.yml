@@ -2,11 +2,13 @@ language: ruby
 sudo: required
 dist: trusty
 rvm:
-  - 2.5.0
+  - 2.5.1
 env:
   - DB=postgresql
 bundler_args: "--without production"
 cache: bundler
+before_install:
+  - gem install bundler
 addons:
   chrome: stable
 before_script:
