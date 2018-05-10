@@ -10,9 +10,9 @@ end
 gem 'amazon-ecs'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-gem 'rails', '5.2.0.rc2'
+gem 'rails'
 gem 'rack-cors'
-gem 'pg', '~> 0.18'
+gem 'pg'
 gem 'puma', '~> 3.0'
 gem 'retryable'
 gem 'rollbar'
@@ -37,7 +37,7 @@ group :development do
 end
 
 group :test do
-  gem 'minitest', '~> 5.10.0'
+  gem 'minitest'
   gem 'capybara'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
