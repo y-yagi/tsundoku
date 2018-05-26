@@ -10,24 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215034021) do
+ActiveRecord::Schema.define(version: 2017_02_15_034021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "books", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.integer  "user_id"
-    t.string   "item_url"
-    t.string   "provider"
+  create_table "books", id: :serial, force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "user_id"
+    t.string "item_url"
+    t.string "provider"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_books_on_user_id", using: :btree
+    t.index ["user_id"], name: "index_books_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "uid",        null: false
-    t.string   "provider",   null: false
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.string "uid", null: false
+    t.string "provider", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
