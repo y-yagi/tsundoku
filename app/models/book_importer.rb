@@ -29,6 +29,8 @@ class BookImporter
       BookImporters::Booth.import(url: @url, user: @user)
     elsif @url.start_with?("https://estore.ohmsha.co.jp")
       BookImporters::Ohmsha.import(url: @url, user: @user)
+    elsif @url.start_with?("https://leanpub.com")
+      BookImporters::Leanpub.import(url: @url, user: @user)
     else
       raise ArgumentError, "Unsupported Domain: #{@url}"
     end

@@ -153,6 +153,21 @@ class Books::ImportControllerTest < ActionController::TestCase
     assert_equal 'Ohmsha', book.provider
   end
 
+  test 'import from Leanpub' do
+    assert_difference('Book.count') do
+      VCR.use_cassette('LeanpubController') do
+        post :create, params: { url: "https://leanpub.com/the-road-to-react-with-firebase" }
+      end
+    end
+    assert_response :success
+
+    book = Book.last
+    assert_equal book.user, users(:google)
+    assert_equal 'The Road to React with Firebase', book.title
+    assert_equal 'https://leanpub.com/the-road-to-react-with-firebase', book.item_url
+    assert_equal 'Leanpub', book.provider
+  end
+
   test 'import from unsupported url' do
     e = assert_raises(ArgumentError) do
       post :create, params: { url: "https://translate.google.com"}
