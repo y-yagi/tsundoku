@@ -10,7 +10,7 @@ end
 gem 'amazon-ecs'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-gem 'rails'
+gem 'rails', '>= 5.2.1.1'
 gem 'rack-cors'
 gem 'pg'
 gem 'puma', '~> 3.0'
@@ -48,3 +48,4 @@ end
 gem 'nokogiri', '>= 1.8.1'
 gem 'loofah', '>= 2.2.1'
 gem 'rails-html-sanitizer', '>= 1.0.4'
+gem 'activestorage', '>= 5.2.1.1'
