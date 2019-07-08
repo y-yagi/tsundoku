@@ -1,8 +1,4 @@
-a.google[href="/auth/google_oauth2", class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"]
-  | Login with Google Account
+= link_to "Login with Google Account", auth_path(provider: :google_oauth2), class: "mdl-button mdl-js-button mdl-button--raised mdl-button--accent", method: :post
 - if Rails.env.development?
   hr
-  a.google[href="/auth/developer", class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"]
-    | Log in with develop
-
-
+  = link_to "Login with develop", auth_path(provider: :developer), class: "mdl-button mdl-js-button mdl-button--raised mdl-button--accent", method: :post
