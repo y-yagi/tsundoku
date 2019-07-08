@@ -10,6 +10,7 @@ end
 gem 'amazon-ecs'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 gem 'rails', '>= 6.0.0.rc1'
 gem 'rack-cors'
 gem 'pg'
